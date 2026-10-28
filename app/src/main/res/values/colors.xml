@@ -2,5 +2,5 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="error_rojo">#FFFF0000</color>
+    <color name="error_rojo">#D32F2F</color>
 </resources>

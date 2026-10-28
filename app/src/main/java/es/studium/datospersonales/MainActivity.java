@@ -11,10 +11,12 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import androidx.core.os.LocaleListCompat;
+
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         txtNombre = findViewById(R.id.txtNombre);
         txtApellidos = findViewById(R.id.txtApellidos);
         txtEdad = findViewById(R.id.txtEdad);
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMostrar = findViewById(R.id.btnMostrar);
         btnReiniciar = findViewById(R.id.btnReiniciar);
 
+        // Adaptadores para rellenar los desplegables (Spinners)
         ArrayAdapter<CharSequence> adapterEstado = ArrayAdapter.createFromResource(
                 this, R.array.opciones_estado_civil, android.R.layout.simple_spinner_item);
         adapterEstado.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapterIdioma.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerIdioma.setAdapter(adapterIdioma);
 
+        // Configurar posición inicial del Spinner de idioma según el idioma actual
         String currentLang = AppCompatDelegate.getApplicationLocales().toLanguageTags();
         if (currentLang.isEmpty()) {
             currentLang = Locale.getDefault().getLanguage();
@@ -67,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         spinnerIdioma.setSelection(initialLangPosition, false);
 
+        // Listener para cambio de idioma
         spinnerIdioma.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -104,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String apellidos = txtApellidos.getText().toString().trim();
             String edadStr = txtEdad.getText().toString().trim();
 
+            // Validación específica acumulando únicamente los campos faltantes
             StringBuilder camposFaltantes = new StringBuilder();
             if (nombre.isEmpty()) {
                 camposFaltantes.append(getString(R.string.val_nombre));
@@ -117,10 +124,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 camposFaltantes.append(getString(R.string.val_edad));
             }
 
+            // Si falta alguno, mostramos el aviso específico en rojo
             if (camposFaltantes.length() > 0) {
                 lblMensaje.setTextColor(ContextCompat.getColor(this, R.color.error_rojo));
                 lblMensaje.setText(getString(R.string.msg_falta_escribir, camposFaltantes.toString()));
             } else {
+                // Si todo está correcto, limpiamos errores y generamos la frase de resultado
                 lblMensaje.setText("");
 
                 int edad = Integer.parseInt(edadStr);
@@ -135,12 +144,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String estadoCivil = spinnerEstadoCivil.getSelectedItem().toString().toLowerCase();
                 String hijos = switchHijos.isChecked() ? getString(R.string.con_hijos) : getString(R.string.sin_hijos);
 
+                // Resultado final estructurado
                 String resultado = apellidos + ", " + nombre + ", " + mayorEdad + ", " + genero + " " + estadoCivil + " y " + hijos + ".";
                 lblMensaje.setTextColor(ContextCompat.getColor(this, R.color.black));
                 lblMensaje.setText(resultado);
             }
 
         } else if (v.getId() == R.id.btnReiniciar) {
+            // Reiniciar valores iniciales
             txtNombre.setText("");
             txtApellidos.setText("");
             txtEdad.setText("");
