@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="opciones_idiomas">
+        <item>@string/idioma_espanol</item>
+        <item>@string/idioma_ingles</item>
+        <item>@string/idioma_frances</item>
+    </string-array>
+
+    <string-array name="opciones_estado_civil">
+        <item>@string/estado_soltero</item>
+        <item>@string/estado_casado</item>
+        <item>@string/estado_separado</item>
+        <item>@string/estado_viudo</item>
+        <item>@string/estado_otro</item>
+    </string-array>
+</resources>

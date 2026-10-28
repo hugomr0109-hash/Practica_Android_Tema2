@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Personal Data</string>
+    <string name="prompt_idioma">Language:</string>
+    <string name="hint_nombre">Type your first name here</string>
+    <string name="hint_apellidos">Type your last name here</string>
+    <string name="hint_edad">Enter your age</string>
+    <string name="radio_hombre">Man</string>
+    <string name="radio_mujer">Woman</string>
+    <string name="estado_soltero">Single</string>
+    <string name="estado_casado">Married</string>
+    <string name="estado_separado">Separated</string>
+    <string name="estado_viudo">Widowed</string>
+    <string name="estado_otro">Other</string>
+    <string name="idioma_espanol">Spanish</string>
+    <string name="idioma_ingles">English</string>
+    <string name="idioma_frances">French</string>
+    <string name="switch_hijos">Do you have children?</string>
+    <string name="btn_mostrar">Show Data</string>
+    <string name="btn_reiniciar">Reset</string>
+
+    <string name="msg_falta_escribir">You still need to enter: %1$s</string>
+    <string name="val_nombre">first name</string>
+    <string name="val_apellidos">last name</string>
+    <string name="val_edad">age</string>
+    <string name="mayor_edad">of legal age</string>
+    <string name="menor_edad">minor</string>
+    <string name="genero_hombre">man</string>
+    <string name="genero_mujer">woman</string>
+    <string name="con_hijos">with children</string>
+    <string name="sin_hijos">without children</string>
+</resources>

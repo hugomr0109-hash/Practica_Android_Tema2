@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Données personnelles</string>
+    <string name="prompt_idioma">Langue :</string>
+    <string name="hint_nombre">Tapez votre prénom ici</string>
+    <string name="hint_apellidos">Tapez votre nom ici</string>
+    <string name="hint_edad">Entrez votre âge</string>
+    <string name="radio_hombre">Homme</string>
+    <string name="radio_mujer">Femme</string>
+    <string name="estado_soltero">Célibataire</string>
+    <string name="estado_casado">Marié(e)</string>
+    <string name="estado_separado">Séparé(e)</string>
+    <string name="estado_viudo">Veuf / Veuve</string>
+    <string name="estado_otro">Autre</string>
+    <string name="idioma_espanol">Espagnol</string>
+    <string name="idioma_ingles">Anglais</string>
+    <string name="idioma_frances">Français</string>
+    <string name="switch_hijos">Avez-vous des enfants ?</string>
+    <string name="btn_mostrar">Afficher les données</string>
+    <string name="btn_reiniciar">Réinitialiser</string>
+
+    <string name="msg_falta_escribir">Il vous manque : %1$s</string>
+    <string name="val_nombre">prénom</string>
+    <string name="val_apellidos">nom</string>
+    <string name="val_edad">âge</string>
+    <string name="mayor_edad">majeur(e)</string>
+    <string name="menor_edad">mineur(e)</string>
+    <string name="genero_hombre">homme</string>
+    <string name="genero_mujer">femme</string>
+    <string name="con_hijos">avec enfants</string>
+    <string name="sin_hijos">sans enfants</string>
+</resources>
